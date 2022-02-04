@@ -7,12 +7,12 @@ class SudokuTable:
     """Rows should contain a two-dimensional list (9x9)."""
     self.rows = rows
 
-    self.block_sets = []
     self.row_sets = []
     self.column_sets = []
-    self.initialize_blocks()
-    # self.initialize_row_sets()
-    # self.initialize_column_sets()
+    self.block_sets = []
+    self.initialize_block_sets()
+    self.initialize_row_sets()
+    self.initialize_column_sets()
 
   def get_column(self, index):
     column = []
@@ -23,25 +23,68 @@ class SudokuTable:
     return column 
 
   def get_block(self, index):
-    """Returns a square 3x3 block, counting from left to right 
-    where 1 is in the top-left corner and 9 is in the 
-    right-bottom corner."""
+    """Returns a square 3x3 block (zero-based), counting from 
+    left to right where 0 is in the top-left corner and 8 is 
+    in the right-bottom corner."""
     block = []
 
-    if index == 0:
+    # TODO: fix this tech debt. Figure out a way to get the rows based on 
+    # TODO: current index, instead of the currently duplicated code.
+    if index < 3:
       rows = [self.rows[0], self.rows[1], self.rows[2]]
       for row in rows:
-        current_cells = [row[0], row[1], row[2]]
-        block.append(current_cells)
+        first_cell_index = index % 3 * 3
+        cells = [row[first_cell_index], row[first_cell_index + 1], row[first_cell_index + 2]]
+        block.append(cells)
+
+    elif index >= 3 and index < 6:
+      rows = [self.rows[3], self.rows[4], self.rows[5]]
+      for row in rows:
+        first_cell_index = index % 3 * 3
+        cells = [row[first_cell_index], row[first_cell_index + 1], row[first_cell_index + 2]]
+        block.append(cells)
+
+    elif index >= 6:
+      rows = [self.rows[6], self.rows[7], self.rows[8]]
+      for row in rows:
+        first_cell_index = index % 3 * 3
+        cells = [row[first_cell_index], row[first_cell_index + 1], row[first_cell_index + 2]]
+        block.append(cells)
 
     return block
 
-  def initialize_blocks(self): 
+  def initialize_block_sets(self): 
     """Initializes the 9 square blocks as Sets for O(1) searches 
     instead of O(N)."""
-    for row in self.rows:
+    for index in range(9):
+      block = self.get_block(index)
+      numbers_in_block = []
+
+      for row in block:
+        for number in row:
+          if number:
+            numbers_in_block.append(number)
+
+      self.block_sets.append(set(numbers_in_block))
+
+  def initialize_row_sets(self): 
+    for index in range(9):
+      row = self.rows[index]
       numbers_in_row = []
+
       for number in row:
         if number:
           numbers_in_row.append(number)
-        self.block_sets.append(set(numbers_in_row))
+
+      self.row_sets.append(set(numbers_in_row))
+
+  def initialize_column_sets(self): 
+    for index in range(9):
+      column = self.get_column(index)
+      numbers_in_column = []
+
+      for number in column:
+        if number:
+          numbers_in_column.append(number)
+
+      self.column_sets.append(set(numbers_in_column))

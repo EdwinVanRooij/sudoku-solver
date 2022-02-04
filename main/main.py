@@ -48,7 +48,16 @@ def main():
     sudoku_table = sudoku_table_reader.read(absolute_filepath)
     sudoku_table_visualizer.show(sudoku_table)
 
-    logger.info(sudoku_table.get_block(0))
+    for index in range(9):
+        # logger.info(f"Block {index}")
+        # logger.info(sudoku_table.get_block(index))
+        logger.info(f"Block set {index}: {sudoku_table.block_sets[index]}")
+
+    for index in range(9):
+        logger.info(f"Row set {index}: {sudoku_table.row_sets[index]}")
+
+    for index in range(9):
+        logger.info(f"Row column {index}: {sudoku_table.column_sets[index]}")
 
     # logger.info("Filling the table's cells with one possible outcome...")
     # sudoku_table = sudoku_solver.fill_certain_cells(sudoku_table)
