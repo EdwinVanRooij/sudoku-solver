@@ -26,3 +26,42 @@
 2022-02-04 10:19:04.586 | INFO     | main.main:main:24 - Starting Sudoku Solver...
 2022-02-04 10:19:04.602 | INFO     | main.main:main:45 - Reading sudoku table from input file '/mnt/c/Projects/sudoku-solver/input.json'...
 2022-02-04 10:19:04.629 | INFO     | main.utilities.sudoku_table_reader:read:17 - Received json object:
+2022-02-04 10:27:02.763 | INFO     | main.main:main:24 - Starting Sudoku Solver...
+2022-02-04 10:27:02.778 | INFO     | main.main:main:45 - Reading sudoku table from input file '/mnt/c/Projects/sudoku-solver/input.json'...
+2022-02-04 10:27:02.785 | INFO     | main.utilities.sudoku_table_reader:read:17 - Received json object:
+2022-02-04 10:32:43.305 | INFO     | main.main:main:24 - Starting Sudoku Solver...
+2022-02-04 10:32:43.341 | INFO     | main.main:main:45 - Reading sudoku table from input file '/mnt/c/Projects/sudoku-solver/input.json'...
+2022-02-04 10:32:43.349 | INFO     | main.utilities.sudoku_table_reader:read:24 - [' ', '2', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+2022-02-04 10:32:43.351 | INFO     | main.utilities.sudoku_table_reader:read:24 - [' ', '8', ' ', '6', ' ', ' ', '9', '2', ' ']
+2022-02-04 10:32:43.352 | INFO     | main.utilities.sudoku_table_reader:read:24 - [' ', ' ', '6', ' ', ' ', '3', ' ', ' ', ' ']
+2022-02-04 10:32:43.354 | INFO     | main.utilities.sudoku_table_reader:read:24 - ['4', '6', '7', ' ', ' ', ' ', ' ', ' ', ' ']
+2022-02-04 10:32:43.355 | INFO     | main.utilities.sudoku_table_reader:read:24 - ['5', ' ', ' ', ' ', '6', ' ', ' ', '9', ' ']
+2022-02-04 10:32:43.357 | INFO     | main.utilities.sudoku_table_reader:read:24 - ['1', ' ', ' ', ' ', '5', ' ', ' ', ' ', ' ']
+2022-02-04 10:32:43.358 | INFO     | main.utilities.sudoku_table_reader:read:24 - [' ', ' ', ' ', '3', ' ', ' ', ' ', '6', '1']
+2022-02-04 10:32:43.359 | INFO     | main.utilities.sudoku_table_reader:read:24 - [' ', '5', '1', ' ', ' ', ' ', '8', ' ', ' ']
+2022-02-04 10:32:43.360 | INFO     | main.utilities.sudoku_table_reader:read:24 - [' ', '4', ' ', ' ', ' ', '9', '2', '5', ' ']
+2022-02-04 10:32:54.843 | INFO     | main.main:main:24 - Starting Sudoku Solver...
+2022-02-04 10:32:54.867 | INFO     | main.main:main:45 - Reading sudoku table from input file '/mnt/c/Projects/sudoku-solver/input.json'...
+2022-02-04 10:32:54.911 | INFO     | main.utilities.sudoku_table_reader:read:24 - [' ', '2', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+2022-02-04 10:32:54.913 | INFO     | main.utilities.sudoku_table_reader:read:24 - [' ', '8', ' ', '6', ' ', ' ', '9', '2', ' ']
+2022-02-04 10:32:54.915 | INFO     | main.utilities.sudoku_table_reader:read:24 - [' ', ' ', '6', ' ', ' ', '3', ' ', ' ', ' ']
+2022-02-04 10:32:54.918 | INFO     | main.utilities.sudoku_table_reader:read:24 - ['4', '6', '7', ' ', ' ', ' ', ' ', ' ', ' ']
+2022-02-04 10:32:54.921 | INFO     | main.utilities.sudoku_table_reader:read:24 - ['5', ' ', ' ', ' ', '6', ' ', ' ', '9', ' ']
+2022-02-04 10:32:54.924 | INFO     | main.utilities.sudoku_table_reader:read:24 - ['1', ' ', ' ', ' ', '5', ' ', ' ', ' ', ' ']
+2022-02-04 10:32:54.926 | INFO     | main.utilities.sudoku_table_reader:read:24 - [' ', ' ', ' ', '3', ' ', ' ', ' ', '6', '1']
+2022-02-04 10:32:54.930 | INFO     | main.utilities.sudoku_table_reader:read:24 - [' ', '5', '1', ' ', ' ', ' ', '8', ' ', ' ']
+2022-02-04 10:32:54.932 | ERROR    | main.utilities.sudoku_table_reader:raise_invalid_json_exception:30 - The json file must contain exactly 9 rows with 9 columns each.
+2022-02-04 10:33:07.942 | INFO     | main.main:main:24 - Starting Sudoku Solver...
+2022-02-04 10:33:07.970 | INFO     | main.main:main:45 - Reading sudoku table from input file '/mnt/c/Projects/sudoku-solver/input.json'...
+2022-02-04 10:33:08.017 | ERROR    | main.utilities.sudoku_table_reader:raise_invalid_json_exception:30 - The json file must contain exactly 9 rows with 9 columns each.
+2022-02-04 10:33:13.192 | INFO     | main.main:main:24 - Starting Sudoku Solver...
+2022-02-04 10:33:13.214 | INFO     | main.main:main:45 - Reading sudoku table from input file '/mnt/c/Projects/sudoku-solver/input.json'...
+2022-02-04 10:33:13.234 | INFO     | main.utilities.sudoku_table_reader:read:24 - [' ', '2', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+2022-02-04 10:33:13.236 | INFO     | main.utilities.sudoku_table_reader:read:24 - [' ', '8', ' ', '6', ' ', ' ', '9', '2', ' ']
+2022-02-04 10:33:13.239 | INFO     | main.utilities.sudoku_table_reader:read:24 - [' ', ' ', '6', ' ', ' ', '3', ' ', ' ', ' ']
+2022-02-04 10:33:13.241 | INFO     | main.utilities.sudoku_table_reader:read:24 - ['4', '6', '7', ' ', ' ', ' ', ' ', ' ', ' ']
+2022-02-04 10:33:13.244 | INFO     | main.utilities.sudoku_table_reader:read:24 - ['5', ' ', ' ', ' ', '6', ' ', ' ', '9', ' ']
+2022-02-04 10:33:13.246 | INFO     | main.utilities.sudoku_table_reader:read:24 - ['1', ' ', ' ', ' ', '5', ' ', ' ', ' ', ' ']
+2022-02-04 10:33:13.249 | INFO     | main.utilities.sudoku_table_reader:read:24 - [' ', ' ', ' ', '3', ' ', ' ', ' ', '6', '1']
+2022-02-04 10:33:13.251 | INFO     | main.utilities.sudoku_table_reader:read:24 - [' ', '5', '1', ' ', ' ', ' ', '8', ' ', ' ']
+2022-02-04 10:33:13.253 | INFO     | main.utilities.sudoku_table_reader:read:24 - [' ', '4', ' ', ' ', ' ', '9', '2', '5', ' ']

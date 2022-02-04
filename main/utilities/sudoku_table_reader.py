@@ -14,5 +14,18 @@ class SudokuTableReader():
         with open(filepath) as json_file:
             data = json.load(json_file)
 
-            logger.info(f"Received json object:")
-            print(data)
+        if len(data) is not 9:
+            SudokuTableReader.raise_invalid_json_exception()
+        
+        for raw_row in data:
+            if len(raw_row) is not 9:
+                SudokuTableReader.raise_invalid_json_exception()
+
+            logger.info(raw_row)
+            pass
+
+    @staticmethod
+    def raise_invalid_json_exception():
+        error_message = "The json file must contain exactly 9 rows with 9 columns each."
+        logger.error(error_message)
+        raise Exception(error_message)
