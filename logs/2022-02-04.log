@@ -65,3 +65,299 @@
 2022-02-04 10:33:13.249 | INFO     | main.utilities.sudoku_table_reader:read:24 - [' ', ' ', ' ', '3', ' ', ' ', ' ', '6', '1']
 2022-02-04 10:33:13.251 | INFO     | main.utilities.sudoku_table_reader:read:24 - [' ', '5', '1', ' ', ' ', ' ', '8', ' ', ' ']
 2022-02-04 10:33:13.253 | INFO     | main.utilities.sudoku_table_reader:read:24 - [' ', '4', ' ', ' ', ' ', '9', '2', '5', ' ']
+2022-02-04 10:36:31.840 | INFO     | main.main:main:24 - Starting Sudoku Solver...
+2022-02-04 10:36:31.869 | INFO     | main.main:main:45 - Reading sudoku table from input file '/mnt/c/Projects/sudoku-solver/input.json'...
+2022-02-04 10:36:31.883 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:31.887 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 2
+2022-02-04 10:36:31.889 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:31.892 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:31.894 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:31.897 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:31.900 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:31.903 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:31.905 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:31.907 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:31.910 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 8
+2022-02-04 10:36:31.912 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:31.914 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 6
+2022-02-04 10:36:31.916 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:31.919 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:31.921 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 9
+2022-02-04 10:36:31.924 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 2
+2022-02-04 10:36:31.928 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:31.930 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:31.933 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:31.935 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 6
+2022-02-04 10:36:31.937 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:31.940 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:31.942 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 3
+2022-02-04 10:36:31.945 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:31.947 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:31.950 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:31.951 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 4
+2022-02-04 10:36:31.954 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 6
+2022-02-04 10:36:31.956 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 7
+2022-02-04 10:36:31.958 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:31.961 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:31.963 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:31.965 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:31.967 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:31.970 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:31.973 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 5
+2022-02-04 10:36:31.975 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:31.977 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:31.980 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:31.982 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 6
+2022-02-04 10:36:31.985 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:31.987 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:31.990 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 9
+2022-02-04 10:36:31.992 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:31.994 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 1
+2022-02-04 10:36:31.997 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:31.999 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:32.002 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:32.005 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 5
+2022-02-04 10:36:32.007 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:32.009 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:32.011 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:32.014 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:32.017 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:32.019 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:32.021 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:32.024 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 3
+2022-02-04 10:36:32.026 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:32.028 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:32.031 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:32.033 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 6
+2022-02-04 10:36:32.036 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 1
+2022-02-04 10:36:32.038 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:32.040 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 5
+2022-02-04 10:36:32.043 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 1
+2022-02-04 10:36:32.045 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:32.047 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:32.050 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:32.053 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 8
+2022-02-04 10:36:32.055 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:32.058 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:32.060 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:32.062 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 4
+2022-02-04 10:36:32.065 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:32.067 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:32.070 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:32.072 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 9
+2022-02-04 10:36:32.074 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 2
+2022-02-04 10:36:32.076 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 5
+2022-02-04 10:36:32.078 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.615 | INFO     | main.main:main:24 - Starting Sudoku Solver...
+2022-02-04 10:36:53.637 | INFO     | main.main:main:45 - Reading sudoku table from input file '/mnt/c/Projects/sudoku-solver/input.json'...
+2022-02-04 10:36:53.651 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.653 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 2
+2022-02-04 10:36:53.656 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.658 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.660 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.661 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.663 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.666 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.668 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.670 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.672 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 8
+2022-02-04 10:36:53.674 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.676 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 6
+2022-02-04 10:36:53.679 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.681 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.683 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 9
+2022-02-04 10:36:53.685 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 2
+2022-02-04 10:36:53.687 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.689 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.691 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.694 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 6
+2022-02-04 10:36:53.696 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.698 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.700 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 3
+2022-02-04 10:36:53.702 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.704 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.705 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.707 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 4
+2022-02-04 10:36:53.709 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 6
+2022-02-04 10:36:53.711 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 7
+2022-02-04 10:36:53.713 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.716 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.718 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.720 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.722 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.724 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.726 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 5
+2022-02-04 10:36:53.728 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.730 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.732 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.735 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 6
+2022-02-04 10:36:53.737 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.739 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.741 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 9
+2022-02-04 10:36:53.743 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.745 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 1
+2022-02-04 10:36:53.747 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.748 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.750 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.753 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 5
+2022-02-04 10:36:53.755 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.757 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.759 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.761 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.764 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.766 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.768 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.770 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 3
+2022-02-04 10:36:53.772 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.774 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.777 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.779 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 6
+2022-02-04 10:36:53.781 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 1
+2022-02-04 10:36:53.783 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.785 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 5
+2022-02-04 10:36:53.787 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 1
+2022-02-04 10:36:53.789 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.791 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.794 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.796 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 8
+2022-02-04 10:36:53.798 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.801 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.803 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.805 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 4
+2022-02-04 10:36:53.807 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.809 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.812 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:36:53.815 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 9
+2022-02-04 10:36:53.817 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 2
+2022-02-04 10:36:53.819 | INFO     | main.utilities.sudoku_table_reader:read_row:33 - 5
+2022-02-04 10:36:53.821 | INFO     | main.utilities.sudoku_table_reader:read_row:33 -  
+2022-02-04 10:40:51.396 | INFO     | main.main:main:24 - Starting Sudoku Solver...
+2022-02-04 10:40:51.409 | INFO     | main.main:main:45 - Reading sudoku table from input file '/mnt/c/Projects/sudoku-solver/input.json'...
+2022-02-04 10:41:41.540 | INFO     | main.main:main:24 - Starting Sudoku Solver...
+2022-02-04 10:41:41.562 | INFO     | main.main:main:45 - Reading sudoku table from input file '/mnt/c/Projects/sudoku-solver/input.json'...
+2022-02-04 10:42:05.631 | INFO     | main.main:main:24 - Starting Sudoku Solver...
+2022-02-04 10:42:05.653 | INFO     | main.main:main:45 - Reading sudoku table from input file '/mnt/c/Projects/sudoku-solver/input.json'...
+2022-02-04 10:42:14.356 | INFO     | main.main:main:24 - Starting Sudoku Solver...
+2022-02-04 10:42:14.381 | INFO     | main.main:main:45 - Reading sudoku table from input file '/mnt/c/Projects/sudoku-solver/input.json'...
+2022-02-04 10:42:36.139 | INFO     | main.main:main:24 - Starting Sudoku Solver...
+2022-02-04 10:42:36.162 | INFO     | main.main:main:45 - Reading sudoku table from input file '/mnt/c/Projects/sudoku-solver/input.json'...
+2022-02-04 10:42:36.176 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:42:52.726 | INFO     | main.main:main:24 - Starting Sudoku Solver...
+2022-02-04 10:42:52.746 | INFO     | main.main:main:45 - Reading sudoku table from input file '/mnt/c/Projects/sudoku-solver/input.json'...
+2022-02-04 10:42:52.756 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.456 | INFO     | main.main:main:24 - Starting Sudoku Solver...
+2022-02-04 10:43:10.477 | INFO     | main.main:main:45 - Reading sudoku table from input file '/mnt/c/Projects/sudoku-solver/input.json'...
+2022-02-04 10:43:10.490 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.493 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is '2'
+2022-02-04 10:43:10.495 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.497 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.499 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.501 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.503 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.505 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.507 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.509 | INFO     | main.utilities.sudoku_table_reader:read:27 - <main.models.sudoku_row.SudokuRow object at 0x7f9aab6b4070>
+2022-02-04 10:43:10.511 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.514 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is '8'
+2022-02-04 10:43:10.515 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.517 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is '6'
+2022-02-04 10:43:10.519 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.521 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.523 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is '9'
+2022-02-04 10:43:10.526 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is '2'
+2022-02-04 10:43:10.528 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.530 | INFO     | main.utilities.sudoku_table_reader:read:27 - <main.models.sudoku_row.SudokuRow object at 0x7f9aabf326d0>
+2022-02-04 10:43:10.532 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.534 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.536 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is '6'
+2022-02-04 10:43:10.537 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.540 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.542 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is '3'
+2022-02-04 10:43:10.544 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.547 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.549 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.551 | INFO     | main.utilities.sudoku_table_reader:read:27 - <main.models.sudoku_row.SudokuRow object at 0x7f9aabf32ca0>
+2022-02-04 10:43:10.553 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is '4'
+2022-02-04 10:43:10.555 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is '6'
+2022-02-04 10:43:10.557 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is '7'
+2022-02-04 10:43:10.559 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.561 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.563 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.565 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.567 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.570 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.571 | INFO     | main.utilities.sudoku_table_reader:read:27 - <main.models.sudoku_row.SudokuRow object at 0x7f9aabf32520>
+2022-02-04 10:43:10.573 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is '5'
+2022-02-04 10:43:10.576 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.579 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.580 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.582 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is '6'
+2022-02-04 10:43:10.584 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.586 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.588 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is '9'
+2022-02-04 10:43:10.590 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.593 | INFO     | main.utilities.sudoku_table_reader:read:27 - <main.models.sudoku_row.SudokuRow object at 0x7f9aabf324f0>
+2022-02-04 10:43:10.595 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is '1'
+2022-02-04 10:43:10.596 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.598 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.600 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.602 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is '5'
+2022-02-04 10:43:10.604 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.606 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.608 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.610 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.612 | INFO     | main.utilities.sudoku_table_reader:read:27 - <main.models.sudoku_row.SudokuRow object at 0x7f9aabf32a00>
+2022-02-04 10:43:10.614 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.616 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.618 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.619 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is '3'
+2022-02-04 10:43:10.621 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.624 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.626 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.628 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is '6'
+2022-02-04 10:43:10.630 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is '1'
+2022-02-04 10:43:10.631 | INFO     | main.utilities.sudoku_table_reader:read:27 - <main.models.sudoku_row.SudokuRow object at 0x7f9aabf32310>
+2022-02-04 10:43:10.634 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.636 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is '5'
+2022-02-04 10:43:10.637 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is '1'
+2022-02-04 10:43:10.640 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.642 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.645 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.647 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is '8'
+2022-02-04 10:43:10.649 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.650 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.652 | INFO     | main.utilities.sudoku_table_reader:read:27 - <main.models.sudoku_row.SudokuRow object at 0x7f9aabf322e0>
+2022-02-04 10:43:10.654 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.657 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is '4'
+2022-02-04 10:43:10.659 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.661 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.663 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.665 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is '9'
+2022-02-04 10:43:10.667 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is '2'
+2022-02-04 10:43:10.669 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is '5'
+2022-02-04 10:43:10.670 | INFO     | main.utilities.sudoku_table_reader:read_row:34 - Column is ' '
+2022-02-04 10:43:10.673 | INFO     | main.utilities.sudoku_table_reader:read:27 - <main.models.sudoku_row.SudokuRow object at 0x7f9aabf326d0>
+2022-02-04 10:43:17.752 | INFO     | main.main:main:24 - Starting Sudoku Solver...
+2022-02-04 10:43:17.762 | INFO     | main.main:main:45 - Reading sudoku table from input file '/mnt/c/Projects/sudoku-solver/input.json'...
+2022-02-04 10:43:17.767 | INFO     | main.utilities.sudoku_table_reader:read:27 - <main.models.sudoku_row.SudokuRow object at 0x7f9c6bf7f0d0>
+2022-02-04 10:43:17.768 | INFO     | main.utilities.sudoku_table_reader:read:27 - <main.models.sudoku_row.SudokuRow object at 0x7f9c6bf7f160>
+2022-02-04 10:43:17.769 | INFO     | main.utilities.sudoku_table_reader:read:27 - <main.models.sudoku_row.SudokuRow object at 0x7f9c6bf7f100>
+2022-02-04 10:43:17.770 | INFO     | main.utilities.sudoku_table_reader:read:27 - <main.models.sudoku_row.SudokuRow object at 0x7f9c6bf7f1f0>
+2022-02-04 10:43:17.771 | INFO     | main.utilities.sudoku_table_reader:read:27 - <main.models.sudoku_row.SudokuRow object at 0x7f9c6bf7f130>
+2022-02-04 10:43:17.772 | INFO     | main.utilities.sudoku_table_reader:read:27 - <main.models.sudoku_row.SudokuRow object at 0x7f9c6bf7f0d0>
+2022-02-04 10:43:17.773 | INFO     | main.utilities.sudoku_table_reader:read:27 - <main.models.sudoku_row.SudokuRow object at 0x7f9c6bf7f160>
+2022-02-04 10:43:17.773 | INFO     | main.utilities.sudoku_table_reader:read:27 - <main.models.sudoku_row.SudokuRow object at 0x7f9c6bf7f100>
+2022-02-04 10:43:17.774 | INFO     | main.utilities.sudoku_table_reader:read:27 - <main.models.sudoku_row.SudokuRow object at 0x7f9c6bf7f1f0>
+2022-02-04 10:43:27.590 | INFO     | main.main:main:24 - Starting Sudoku Solver...
+2022-02-04 10:43:27.600 | INFO     | main.main:main:45 - Reading sudoku table from input file '/mnt/c/Projects/sudoku-solver/input.json'...
+2022-02-04 10:43:35.343 | INFO     | main.main:main:24 - Starting Sudoku Solver...
+2022-02-04 10:43:35.353 | INFO     | main.main:main:45 - Reading sudoku table from input file '/mnt/c/Projects/sudoku-solver/input.json'...
+2022-02-04 10:43:35.359 | INFO     | main.utilities.sudoku_table_reader:read:27 - <main.models.sudoku_row.SudokuRow object at 0x7fb75ffcc070>
+2022-02-04 10:43:35.360 | INFO     | main.utilities.sudoku_table_reader:read:27 - <main.models.sudoku_row.SudokuRow object at 0x7fb75ffcc160>
+2022-02-04 10:43:35.361 | INFO     | main.utilities.sudoku_table_reader:read:27 - <main.models.sudoku_row.SudokuRow object at 0x7fb75ffcc100>
+2022-02-04 10:43:35.362 | INFO     | main.utilities.sudoku_table_reader:read:27 - <main.models.sudoku_row.SudokuRow object at 0x7fb75ffcc1f0>
+2022-02-04 10:43:35.363 | INFO     | main.utilities.sudoku_table_reader:read:27 - <main.models.sudoku_row.SudokuRow object at 0x7fb75ffcc130>
+2022-02-04 10:43:35.365 | INFO     | main.utilities.sudoku_table_reader:read:27 - <main.models.sudoku_row.SudokuRow object at 0x7fb75ffcc070>
+2022-02-04 10:43:35.367 | INFO     | main.utilities.sudoku_table_reader:read:27 - <main.models.sudoku_row.SudokuRow object at 0x7fb75ffcc160>
+2022-02-04 10:43:35.368 | INFO     | main.utilities.sudoku_table_reader:read:27 - <main.models.sudoku_row.SudokuRow object at 0x7fb75ffcc100>
+2022-02-04 10:43:35.368 | INFO     | main.utilities.sudoku_table_reader:read:27 - <main.models.sudoku_row.SudokuRow object at 0x7fb75ffcc1f0>
