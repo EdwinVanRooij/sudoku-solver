@@ -16,13 +16,53 @@ class SudokuSolver():
 
         return number_of_cells_filled
 
-    def fill_certain_cells_by_number(self, sudoku_table):
+    def fill_certain_cells_by_number(self, sudoku_table: SudokuTable):
         """Fills all cells which can be known for sure by checking the number
         of possibilities for each number. If a number is only possible in one 
         spot for a row, column, or block, that one is filled in."""
         number_of_cells_filled = 0
 
         # Check for all rows
+        for row_index, row in enumerate(sudoku_table.rows):
+            number_occurrences_dictionary = {
+                1: 0,
+                2: 0,
+                3: 0,
+                4: 0,
+                5: 0,
+                6: 0,
+                7: 0,
+                8: 0,
+                9: 0,
+            }
+
+            number_to_column_dictionary = {
+                1: 0,
+                2: 0,
+                3: 0,
+                4: 0,
+                5: 0,
+                6: 0,
+                7: 0,
+                8: 0,
+                9: 0,
+            }
+
+            for column_index, number in enumerate(row):
+                if number is None:
+                    possible_numbers = self.determine_possible_numbers(sudoku_table, row_index, column_index)
+                    for possible_number in possible_numbers:
+                        number_occurrences_dictionary[possible_number] = number_occurrences_dictionary[possible_number] + 1
+                        number_to_column_dictionary[possible_number] = column_index
+            
+            for number, occurrences in number_occurrences_dictionary.items():
+                if occurrences == 1:
+                    # The number occurred once, so the only index set in the 
+                    # number_to_column_dictionary is the column we need.
+                    column_index = number_to_column_dictionary[number]
+                    logger.success(f'Cell x{column_index+1} y{row_index+1} must be {number}!')
+                    sudoku_table.fill(row_index, column_index, number)
+                    number_of_cells_filled += 1
         #todo
 
         # Check for all columns
@@ -33,7 +73,7 @@ class SudokuSolver():
 
         return number_of_cells_filled
 
-    def fill_certain_cells_by_cell(self, sudoku_table):
+    def fill_certain_cells_by_cell(self, sudoku_table: SudokuTable):
         """Fills all cells which can be known for sure by checking the number of
         possibilities for each individual cell. If there is only one possibility,
         that one is filled in."""
