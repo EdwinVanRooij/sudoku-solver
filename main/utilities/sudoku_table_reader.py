@@ -11,7 +11,8 @@ class SudokuTableReader():
     def read(self, filepath):
         """Reads a json filepath, parses the input, and converts it
         into a SudokuTable model instance."""
-        json_object = json.loads(filepath)
+        with open(filepath) as json_file:
+            data = json.load(json_file)
 
-        logger.info(f"Received json object:")
-        print(json_object)
+            logger.info(f"Received json object:")
+            print(data)
