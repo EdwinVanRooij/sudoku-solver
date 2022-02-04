@@ -4,7 +4,6 @@ from loguru import logger
 
 import json
 
-from main.models.sudoku_row import SudokuRow
 from main.models.sudoku_table import SudokuTable
 
 class SudokuTableReader():
@@ -49,7 +48,7 @@ class SudokuTableReader():
             logger.error(error_message)
             raise Exception(error_message)
 
-        return SudokuRow(numbers)
+        return numbers
 
 
     @staticmethod

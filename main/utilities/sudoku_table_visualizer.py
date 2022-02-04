@@ -2,9 +2,6 @@
 
 from loguru import logger
 
-import json
-
-from main.models.sudoku_row import SudokuRow
 from main.models.sudoku_table import SudokuTable
 
 class SudokuTableVisualizer():
@@ -15,7 +12,7 @@ class SudokuTableVisualizer():
         for idx, sudoku_row in enumerate(sudoku_table.rows):
             row_as_string = "|"
 
-            for number in sudoku_row.numbers:
+            for number in sudoku_row:
                 if number:
                     row_as_string += f"{number}|"
                 else:

@@ -12,6 +12,7 @@ from loguru import logger
 from datetime import datetime
 
 from main.constants.variables import DEFAULT_INPUT_FILENAME, DEFAULT_OUTPUT_FILENAME
+from main.utilities.sudoku_solver import SudokuSolver
 from main.utilities.sudoku_table_visualizer import SudokuTableVisualizer
 
 from .utilities.sudoku_table_reader import SudokuTableReader
@@ -33,9 +34,9 @@ def main():
     args = parser.parse_args()
 
     sudoku_table_reader = SudokuTableReader()
-    # sudoku_table_writer = SudokuTableWriter()
     sudoku_table_visualizer = SudokuTableVisualizer()
-    # sudoku_solver = SudokuSolver()
+    sudoku_solver = SudokuSolver()
+    # sudoku_table_writer = SudokuTableWriter()
 
     absolute_filepath = os.path.abspath(args.input_file)
     input_exists = os.path.exists(absolute_filepath)
@@ -47,8 +48,10 @@ def main():
     sudoku_table = sudoku_table_reader.read(absolute_filepath)
     sudoku_table_visualizer.show(sudoku_table)
 
-    # logger.info("Filling tables with one possible outcome...")
-    # sudoku_table = sudoku_table.fill_certain_tables(sudoku_table)
+    logger.info(sudoku_table.get_block(0))
+
+    # logger.info("Filling the table's cells with one possible outcome...")
+    # sudoku_table = sudoku_solver.fill_certain_cells(sudoku_table)
     # sudoku_table_visualizer.show(sudoku_table)
 
     # if not sudoku_table.is_done(): 
