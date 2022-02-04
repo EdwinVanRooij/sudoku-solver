@@ -12,6 +12,7 @@ from loguru import logger
 from datetime import datetime
 
 from main.constants.variables import DEFAULT_INPUT_FILENAME, DEFAULT_OUTPUT_FILENAME
+from main.utilities.sudoku_table_visualizer import SudokuTableVisualizer
 
 from .utilities.sudoku_table_reader import SudokuTableReader
 
@@ -33,7 +34,7 @@ def main():
 
     sudoku_table_reader = SudokuTableReader()
     # sudoku_table_writer = SudokuTableWriter()
-    # sudoku_table_visualizer = SudokuTableVisualizer()
+    sudoku_table_visualizer = SudokuTableVisualizer()
     # sudoku_solver = SudokuSolver()
 
     absolute_filepath = os.path.abspath(args.input_file)
@@ -44,7 +45,7 @@ def main():
 
     logger.info(f"Reading sudoku table from input file '{absolute_filepath}'...")
     sudoku_table = sudoku_table_reader.read(absolute_filepath)
-    # sudoku_table_visualizer.show(sudoku_table)
+    sudoku_table_visualizer.show(sudoku_table)
 
     # logger.info("Filling tables with one possible outcome...")
     # sudoku_table = sudoku_table.fill_certain_tables(sudoku_table)

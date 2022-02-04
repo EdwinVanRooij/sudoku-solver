@@ -5,6 +5,7 @@ from loguru import logger
 import json
 
 from main.models.sudoku_row import SudokuRow
+from main.models.sudoku_table import SudokuTable
 
 class SudokuTableReader():
     def __init__(self):
@@ -19,12 +20,18 @@ class SudokuTableReader():
         if len(data) != 9:
             SudokuTableReader.raise_invalid_json_exception()
         
+        sudoku_rows = []
+
         for raw_row in data:
             if len(raw_row) != 9:
                 SudokuTableReader.raise_invalid_json_exception()
 
-            sudoku_row = SudokuTableReader.read_row(raw_row)
-            logger.info(sudoku_row)
+            sudoku_rows.append(SudokuTableReader.read_row(raw_row))
+        
+        table = SudokuTable(sudoku_rows)
+        logger.info("Successfully read the sudoku table")
+
+        return table
 
     @staticmethod
     def read_row(row):
