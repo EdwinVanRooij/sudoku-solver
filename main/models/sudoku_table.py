@@ -10,9 +10,19 @@ class SudokuTable:
     self.row_sets = []
     self.column_sets = []
     self.block_sets = []
+
     self.initialize_block_sets()
     self.initialize_row_sets()
     self.initialize_column_sets()
+
+  @property
+  def completed(self):
+    for row in self.rows:
+      for number in row:
+        if number is None:
+          return False
+
+    return True
 
   def fill(self, row_index, column_index, certain_number):
     # Update the number in the table

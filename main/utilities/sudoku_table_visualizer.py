@@ -19,8 +19,8 @@ class SudokuTableVisualizer():
                     row_as_string += f" |"
 
             if idx % 3 == 0:
-                print("--------------------")
+                print("-------------------")
                 pass
 
             print(row_as_string)
-        print("--------------------")
+        print("-------------------")

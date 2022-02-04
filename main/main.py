@@ -55,6 +55,11 @@ def main():
 
     sudoku_table_visualizer.show(sudoku_table)
 
+    if sudoku_table.completed: 
+        logger.success("Successfully completed the Sudoku!")
+    else:
+        logger.warning("Could not complete the Sudoku.")
+
     # if not sudoku_table.is_done(): 
     #     logger.info("Sudoku table is not yet done, bruteforcing all possibilities...")
     #     sudoku_table = sudoku_solver.bruteforce_remaining_tables(sudoku_table)

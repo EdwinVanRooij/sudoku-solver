@@ -3,6 +3,7 @@
 from loguru import logger
 
 from main.models.sudoku_table import SudokuTable
+from main.utilities.util import generate_one_to_nine_dictionary
 
 class SudokuSolver():
     def __init__(self):
@@ -23,30 +24,22 @@ class SudokuSolver():
         number_of_cells_filled = 0
 
         # Check for all rows
-        for row_index, row in enumerate(sudoku_table.rows):
-            number_occurrences_dictionary = {
-                1: 0,
-                2: 0,
-                3: 0,
-                4: 0,
-                5: 0,
-                6: 0,
-                7: 0,
-                8: 0,
-                9: 0,
-            }
+        number_of_cells_filled = self.fill_certain_cells_by_row(sudoku_table)
 
-            number_to_column_dictionary = {
-                1: 0,
-                2: 0,
-                3: 0,
-                4: 0,
-                5: 0,
-                6: 0,
-                7: 0,
-                8: 0,
-                9: 0,
-            }
+        # Check for all columns
+        # number_of_cells_filled = self.fill_certain_cells_by_column(sudoku_table)
+
+        # Check for all blocks
+        #todo
+
+        return number_of_cells_filled
+
+    def fill_certain_cells_by_row(self, sudoku_table: SudokuTable):
+        number_of_cells_filled = 0
+
+        for row_index, row in enumerate(sudoku_table.rows):
+            number_occurrences_dictionary = generate_one_to_nine_dictionary()
+            number_to_column_dictionary = generate_one_to_nine_dictionary()
 
             for column_index, number in enumerate(row):
                 if number is None:
@@ -63,13 +56,32 @@ class SudokuSolver():
                     logger.success(f'Cell x{column_index+1} y{row_index+1} must be {number}! (solved using row-method)')
                     sudoku_table.fill(row_index, column_index, number)
                     number_of_cells_filled += 1
-        #todo
 
-        # Check for all columns
-        #todo
+        return number_of_cells_filled
 
-        # Check for all blocks
-        #todo
+    def fill_certain_cells_by_column(self, sudoku_table: SudokuTable):
+        number_of_cells_filled = 0
+
+        for column_index in range(9):
+            column = sudoku_table.get_column(column_index)
+            number_occurrences_dictionary = generate_one_to_nine_dictionary()
+            number_to_row_dictionary = generate_one_to_nine_dictionary()
+
+            for row_index, number in enumerate(column):
+                if number is None:
+                    possible_numbers = self.determine_possible_numbers(sudoku_table, row_index, column_index)
+                    for possible_number in possible_numbers:
+                        number_occurrences_dictionary[possible_number] = number_occurrences_dictionary[possible_number] + 1
+                        number_to_row_dictionary[possible_number] = row_index
+            
+            for number, occurrences in number_occurrences_dictionary.items():
+                if occurrences == 1:
+                    # The number occurred once, so the only index set in the 
+                    # number_to_column_dictionary is the column we need.
+                    column_index = number_to_row_dictionary[number]
+                    logger.success(f'Cell {column_index+1}:{row_index+1} must be {number}! (solved using column-method)')
+                    sudoku_table.fill(row_index, column_index, number)
+                    number_of_cells_filled += 1
 
         return number_of_cells_filled
 
@@ -86,7 +98,7 @@ class SudokuSolver():
 
                     if len(possible_numbers) == 1:
                         certain_number = possible_numbers[0]
-                        logger.success(f'Cell x{column_index+1} y{row_index+1} must be {certain_number}! (solved using cell-method)')
+                        logger.success(f'Cell {column_index+1}:{row_index+1} must be {certain_number}! (solved using cell-method)')
                         sudoku_table.fill(row_index, column_index, certain_number)
                         number_of_cells_filled += 1
                     else:
