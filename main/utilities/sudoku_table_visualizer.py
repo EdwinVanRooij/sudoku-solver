@@ -9,7 +9,7 @@ class SudokuTableVisualizer():
         pass
 
     def show(self, sudoku_table: SudokuTable):
-        for idx, sudoku_row in enumerate(sudoku_table.rows):
+        for index, sudoku_row in enumerate(sudoku_table.rows):
             row_as_string = "|"
 
             for number in sudoku_row:
@@ -18,7 +18,7 @@ class SudokuTableVisualizer():
                 else:
                     row_as_string += f" |"
 
-            if idx % 3 == 0:
+            if index % 3 == 0:
                 print("-------------------")
                 pass
 

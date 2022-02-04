@@ -3,6 +3,7 @@
 from loguru import logger
 
 from main.models.sudoku_table import SudokuTable
+from main.utilities.sudoku_table_visualizer import SudokuTableVisualizer
 from main.utilities.util import generate_one_to_nine_dictionary
 
 class SudokuSolver():
@@ -40,24 +41,20 @@ class SudokuSolver():
         for column_index in range(9):
             column = sudoku_table.get_column(column_index)
             number_occurrences_dictionary = generate_one_to_nine_dictionary()
-            number_to_column_dictionary = generate_one_to_nine_dictionary()
+            number_to_row_dictionary = generate_one_to_nine_dictionary()
 
             for row_index, number in enumerate(column):
                 if number is None:
                     possible_numbers = self.determine_possible_numbers(sudoku_table, row_index, column_index)
                     for possible_number in possible_numbers:
                         number_occurrences_dictionary[possible_number] = number_occurrences_dictionary[possible_number] + 1
-                        number_to_column_dictionary[possible_number] = column_index
+                        number_to_row_dictionary[possible_number] = row_index
             
             for number, occurrences in number_occurrences_dictionary.items():
                 if occurrences == 1:
                     # The number occurred once, so the only index set in the 
-                    # number_to_column_dictionary is the column we need.
-                    column_index = number_to_column_dictionary[number]
-                    logger.info(f'About to fill cell {column_index+1}:{row_index+1} with {number}! (column-method)')
-                    print(number_occurrences_dictionary)
-                    print(number_to_column_dictionary)
-
+                    # number_to_row_dictionary is the row we need.
+                    row_index = number_to_row_dictionary[number]
                     logger.success(f'Cell {column_index+1}:{row_index+1} is {number}! (column-method)')
                     sudoku_table.fill(row_index, column_index, number)
                     number_of_cells_filled += 1
