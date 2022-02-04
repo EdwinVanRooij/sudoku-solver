@@ -34,6 +34,32 @@ class SudokuSolver():
 
         return number_of_cells_filled
 
+    def fill_certain_cells_by_column(self, sudoku_table: SudokuTable):
+        number_of_cells_filled = 0
+
+        for column_index in range(9):
+            column = sudoku_table.get_column(column_index)
+            number_occurrences_dictionary = generate_one_to_nine_dictionary()
+            number_to_column_dictionary = generate_one_to_nine_dictionary()
+
+            for row_index, number in enumerate(column):
+                if number is None:
+                    possible_numbers = self.determine_possible_numbers(sudoku_table, row_index, column_index)
+                    for possible_number in possible_numbers:
+                        number_occurrences_dictionary[possible_number] = number_occurrences_dictionary[possible_number] + 1
+                        number_to_column_dictionary[possible_number] = column_index
+            
+            for number, occurrences in number_occurrences_dictionary.items():
+                if occurrences == 1:
+                    # The number occurred once, so the only index set in the 
+                    # number_to_column_dictionary is the column we need.
+                    column_index = number_to_column_dictionary[number]
+                    logger.success(f'Cell {column_index+1}:{row_index+1} is {number}! (column-method)')
+                    sudoku_table.fill(row_index, column_index, number)
+                    number_of_cells_filled += 1
+
+        return number_of_cells_filled
+
     def fill_certain_cells_by_row(self, sudoku_table: SudokuTable):
         number_of_cells_filled = 0
 
@@ -53,33 +79,7 @@ class SudokuSolver():
                     # The number occurred once, so the only index set in the 
                     # number_to_column_dictionary is the column we need.
                     column_index = number_to_column_dictionary[number]
-                    logger.success(f'Cell x{column_index+1} y{row_index+1} must be {number}! (solved using row-method)')
-                    sudoku_table.fill(row_index, column_index, number)
-                    number_of_cells_filled += 1
-
-        return number_of_cells_filled
-
-    def fill_certain_cells_by_column(self, sudoku_table: SudokuTable):
-        number_of_cells_filled = 0
-
-        for column_index in range(9):
-            column = sudoku_table.get_column(column_index)
-            number_occurrences_dictionary = generate_one_to_nine_dictionary()
-            number_to_row_dictionary = generate_one_to_nine_dictionary()
-
-            for row_index, number in enumerate(column):
-                if number is None:
-                    possible_numbers = self.determine_possible_numbers(sudoku_table, row_index, column_index)
-                    for possible_number in possible_numbers:
-                        number_occurrences_dictionary[possible_number] = number_occurrences_dictionary[possible_number] + 1
-                        number_to_row_dictionary[possible_number] = row_index
-            
-            for number, occurrences in number_occurrences_dictionary.items():
-                if occurrences == 1:
-                    # The number occurred once, so the only index set in the 
-                    # number_to_column_dictionary is the column we need.
-                    column_index = number_to_row_dictionary[number]
-                    logger.success(f'Cell {column_index+1}:{row_index+1} must be {number}! (solved using column-method)')
+                    logger.success(f'Cell {column_index+1}:{row_index+1} is {number}! (row-method)')
                     sudoku_table.fill(row_index, column_index, number)
                     number_of_cells_filled += 1
 
@@ -98,7 +98,7 @@ class SudokuSolver():
 
                     if len(possible_numbers) == 1:
                         certain_number = possible_numbers[0]
-                        logger.success(f'Cell {column_index+1}:{row_index+1} must be {certain_number}! (solved using cell-method)')
+                        logger.success(f'Cell {column_index+1}:{row_index+1} is {certain_number}! (cell-method)')
                         sudoku_table.fill(row_index, column_index, certain_number)
                         number_of_cells_filled += 1
                     else:
