@@ -27,7 +27,7 @@ class SudokuSolver():
         number_of_cells_filled = self.fill_certain_cells_by_row(sudoku_table)
 
         # Check for all columns
-        # number_of_cells_filled = self.fill_certain_cells_by_column(sudoku_table)
+        number_of_cells_filled = self.fill_certain_cells_by_column(sudoku_table)
 
         # Check for all blocks
         #todo
@@ -54,6 +54,10 @@ class SudokuSolver():
                     # The number occurred once, so the only index set in the 
                     # number_to_column_dictionary is the column we need.
                     column_index = number_to_column_dictionary[number]
+                    logger.info(f'About to fill cell {column_index+1}:{row_index+1} with {number}! (column-method)')
+                    print(number_occurrences_dictionary)
+                    print(number_to_column_dictionary)
+
                     logger.success(f'Cell {column_index+1}:{row_index+1} is {number}! (column-method)')
                     sudoku_table.fill(row_index, column_index, number)
                     number_of_cells_filled += 1
