@@ -40,11 +40,13 @@ class SudokuSolver():
             number_to_row_dictionary = generate_one_to_nine_dictionary()
             number_to_column_dictionary = generate_one_to_nine_dictionary()
 
-            for row_index, row in enumerate(block):
+            print(f'Doing a foreach over block {block}')
+            base_row_index = 0
+            for row in block:
                 for column_index, number in enumerate(row):
-
                     if number is None:
-                        row_index = row_index_in_block_to_absolute(block_index, row_index)
+                        print(f'base row index {base_row_index}')
+                        row_index = row_index_in_block_to_absolute(block_index, base_row_index)
                         column_index = column_index_in_block_to_absolute(block_index, column_index)
 
                         possible_numbers = self.determine_possible_numbers(sudoku_table, row_index, column_index)
@@ -54,6 +56,7 @@ class SudokuSolver():
                             logger.info(f'Currently there are {number_occurrences_dictionary[possible_number]} places where {possible_number} could be')
                             number_to_row_dictionary[possible_number] = row_index
                             number_to_column_dictionary[possible_number] = column_index
+                base_row_index += 1
             
             for number, occurrences in number_occurrences_dictionary.items():
                 if occurrences == 1:
@@ -147,6 +150,7 @@ class SudokuSolver():
     def determine_possible_numbers(self, sudoku_table, row_index, column_index):
         """Determines which numbers are possible for a single cell in a Sudoku table."""
         numbers_in_block = sudoku_table.block_sets[SudokuTable.get_block_index(row_index, column_index)]
+        print(f'Row index {row_index}, column index {column_index}')
         numbers_in_row = sudoku_table.row_sets[row_index]
         numbers_in_column = sudoku_table.column_sets[column_index]
         numbers_affecting_current_cell = numbers_in_block.union(numbers_in_row).union(numbers_in_column)
