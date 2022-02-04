@@ -11,6 +11,34 @@ class SudokuSolver():
     def fill_certain_cells(self, sudoku_table: SudokuTable):
         number_of_cells_filled = 0
 
+        number_of_cells_filled += self.fill_certain_cells_by_cell(sudoku_table)
+        number_of_cells_filled += self.fill_certain_cells_by_number(sudoku_table)
+
+        return number_of_cells_filled
+
+    def fill_certain_cells_by_number(self, sudoku_table):
+        """Fills all cells which can be known for sure by checking the number
+        of possibilities for each number. If a number is only possible in one 
+        spot for a row, column, or block, that one is filled in."""
+        number_of_cells_filled = 0
+
+        # Check for all rows
+        #todo
+
+        # Check for all columns
+        #todo
+
+        # Check for all blocks
+        #todo
+
+        return number_of_cells_filled
+
+    def fill_certain_cells_by_cell(self, sudoku_table):
+        """Fills all cells which can be known for sure by checking the number of
+        possibilities for each individual cell. If there is only one possibility,
+        that one is filled in."""
+        number_of_cells_filled = 0
+
         for row_index, row in enumerate(sudoku_table.rows):
             for column_index, cell in enumerate(row):
                 if cell is None:
