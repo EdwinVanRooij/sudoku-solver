@@ -4,7 +4,7 @@ from loguru import logger
 
 from main.models.sudoku_table import SudokuTable
 from main.utilities.sudoku_table_visualizer import SudokuTableVisualizer
-from main.utilities.util import generate_one_to_nine_dictionary
+from main.utilities.util import column_index_in_block_to_absolute, generate_one_to_nine_dictionary, row_index_in_block_to_absolute
 
 class SudokuSolver():
     def __init__(self):
@@ -24,14 +24,50 @@ class SudokuSolver():
         spot for a row, column, or block, that one is filled in."""
         number_of_cells_filled = 0
 
-        # Check for all rows
-        number_of_cells_filled = self.fill_certain_cells_by_row(sudoku_table)
+        number_of_cells_filled += self.fill_certain_cells_by_row(sudoku_table)
+        number_of_cells_filled += self.fill_certain_cells_by_column(sudoku_table)
+        number_of_cells_filled += self.fill_certain_cells_by_block(sudoku_table)
 
-        # Check for all columns
-        number_of_cells_filled = self.fill_certain_cells_by_column(sudoku_table)
+        return number_of_cells_filled
 
-        # Check for all blocks
-        #todo
+    def fill_certain_cells_by_block(self, sudoku_table: SudokuTable):
+        number_of_cells_filled = 0
+
+        for block_index in range(9):
+            block = sudoku_table.get_block(block_index)
+            logger.info("Resetting dictionaries")
+            number_occurrences_dictionary = generate_one_to_nine_dictionary()
+            number_to_row_dictionary = generate_one_to_nine_dictionary()
+            number_to_column_dictionary = generate_one_to_nine_dictionary()
+
+            for row_index, row in enumerate(block):
+                for column_index, number in enumerate(row):
+
+                    if number is None:
+                        row_index = row_index_in_block_to_absolute(block_index, row_index)
+                        column_index = column_index_in_block_to_absolute(block_index, column_index)
+
+                        possible_numbers = self.determine_possible_numbers(sudoku_table, row_index, column_index)
+                        logger.info(f'Possible numbers for {column_index+1}:{row_index+1} {possible_numbers}')
+                        for possible_number in possible_numbers:
+                            number_occurrences_dictionary[possible_number] = number_occurrences_dictionary[possible_number] + 1
+                            logger.info(f'Currently there are {number_occurrences_dictionary[possible_number]} places where {possible_number} could be')
+                            number_to_row_dictionary[possible_number] = row_index
+                            number_to_column_dictionary[possible_number] = column_index
+            
+            for number, occurrences in number_occurrences_dictionary.items():
+                if occurrences == 1:
+                    # The number occurred once, so the only index set in the 
+                    # number_to_column_dictionary is the column we need.
+                    row_index = number_to_row_dictionary[number]
+                    column_index = number_to_column_dictionary[number]
+                    logger.success(f'Cell {column_index+1}:{row_index+1} is {number}! (block-method)')
+                    print(number_occurrences_dictionary)
+                    print(number_to_row_dictionary)
+                    print(number_to_column_dictionary)
+                    SudokuTableVisualizer().show(sudoku_table)
+                    sudoku_table.fill(row_index, column_index, number)
+                    number_of_cells_filled += 1
 
         return number_of_cells_filled
 

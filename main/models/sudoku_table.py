@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 
+from main.utilities.util import column_index_in_block_to_absolute, row_index_in_block_to_absolute
+
+
 class SudokuTable:
   """Represents the complete 'physical' Sudoku table."""
 
@@ -47,28 +50,19 @@ class SudokuTable:
     in the right-bottom corner."""
     block = []
 
-    # TODO: fix this tech debt. Figure out a way to get the rows based on 
-    # TODO: current index, instead of the currently duplicated code.
-    if index < 3:
-      rows = [self.rows[0], self.rows[1], self.rows[2]]
-      for row in rows:
-        first_cell_index = index % 3 * 3
-        cells = [row[first_cell_index], row[first_cell_index + 1], row[first_cell_index + 2]]
-        block.append(cells)
+    rows = [
+       self.rows[row_index_in_block_to_absolute(index, 0)], 
+       self.rows[row_index_in_block_to_absolute(index, 1)], 
+       self.rows[row_index_in_block_to_absolute(index, 2)], 
+    ]
 
-    elif index >= 3 and index < 6:
-      rows = [self.rows[3], self.rows[4], self.rows[5]]
-      for row in rows:
-        first_cell_index = index % 3 * 3
-        cells = [row[first_cell_index], row[first_cell_index + 1], row[first_cell_index + 2]]
-        block.append(cells)
-
-    elif index >= 6:
-      rows = [self.rows[6], self.rows[7], self.rows[8]]
-      for row in rows:
-        first_cell_index = index % 3 * 3
-        cells = [row[first_cell_index], row[first_cell_index + 1], row[first_cell_index + 2]]
-        block.append(cells)
+    for row in rows:
+      cells = [
+        row[column_index_in_block_to_absolute(index, 0)], 
+        row[column_index_in_block_to_absolute(index, 1)], 
+        row[column_index_in_block_to_absolute(index, 2)],
+      ]
+      block.append(cells)
 
     return block
 
