@@ -14,6 +14,32 @@ class SudokuTable:
     self.initialize_row_sets()
     self.initialize_column_sets()
 
+  @staticmethod
+  def get_block_index(row_index, column_index):
+    if row_index < 3:
+      # First three rows
+      if column_index < 3:
+        return 0
+      elif column_index < 6:
+        return 1
+      else:
+        return 2
+    elif row_index < 6:
+      # Middle 3 rows
+      if column_index < 3:
+        return 3
+      elif column_index < 6:
+        return 4
+      else:
+        return 5
+    # Last 3 rows
+    if column_index < 3:
+      return 6
+    elif column_index < 6:
+      return 7
+    else:
+      return 8
+
   def get_column(self, index):
     column = []
 
