@@ -16,6 +16,7 @@ from main.constants.variables import DEFAULT_INPUT_FILENAME, DEFAULT_OUTPUT_FILE
 from .utilities.sudoku_table_reader import SudokuTableReader
 
 import argparse
+import os
 
 def main():
     date = datetime.today().strftime('%Y-%m-%d')
@@ -35,8 +36,14 @@ def main():
     # sudoku_table_visualizer = SudokuTableVisualizer()
     # sudoku_solver = SudokuSolver()
 
-    logger.info("Reading sudoku table from input file...")
-    sudoku_table = sudoku_table_reader.read(args.input_file)
+    absolute_filepath = os.path.abspath(args.input_file)
+    input_exists = os.path.exists(absolute_filepath)
+    if not input_exists:
+        logger.error(f"Input file '{absolute_filepath}' does not exist. Please provide a valid filepath.")
+        return
+
+    logger.info(f"Reading sudoku table from input file '{absolute_filepath}'...")
+    sudoku_table = sudoku_table_reader.read(absolute_filepath)
     # sudoku_table_visualizer.show(sudoku_table)
 
     # logger.info("Filling tables with one possible outcome...")
@@ -50,6 +57,6 @@ def main():
     # logger.info("Solved!")
     # sudoku_table_visualizer.show(sudoku_table)
 
-    # logger.info("Solved!")
+    # logger.success("Solved!")
     # logger.info(f"Writing output to '{args.output_file}'...")
     # sudoku_table_writer.write(args.output_file)
