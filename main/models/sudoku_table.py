@@ -14,31 +14,14 @@ class SudokuTable:
     self.initialize_row_sets()
     self.initialize_column_sets()
 
-  @staticmethod
-  def get_block_index(row_index, column_index):
-    if row_index < 3:
-      # First three rows
-      if column_index < 3:
-        return 0
-      elif column_index < 6:
-        return 1
-      else:
-        return 2
-    elif row_index < 6:
-      # Middle 3 rows
-      if column_index < 3:
-        return 3
-      elif column_index < 6:
-        return 4
-      else:
-        return 5
-    # Last 3 rows
-    if column_index < 3:
-      return 6
-    elif column_index < 6:
-      return 7
-    else:
-      return 8
+  def fill(self, row_index, column_index, certain_number):
+    # Update the number in the table
+    self.rows[row_index][column_index] = certain_number
+
+    # Update the sets to which the number belongs
+    self.row_sets[row_index].add(certain_number)
+    self.column_sets[column_index].add(certain_number)
+    self.block_sets[SudokuTable.get_block_index(row_index, column_index)].add(certain_number)
 
   def get_column(self, index):
     column = []
@@ -114,3 +97,29 @@ class SudokuTable:
           numbers_in_column.append(number)
 
       self.column_sets.append(set(numbers_in_column))
+
+  @staticmethod
+  def get_block_index(row_index, column_index):
+    if row_index < 3:
+      # First three rows
+      if column_index < 3:
+        return 0
+      elif column_index < 6:
+        return 1
+      else:
+        return 2
+    elif row_index < 6:
+      # Middle 3 rows
+      if column_index < 3:
+        return 3
+      elif column_index < 6:
+        return 4
+      else:
+        return 5
+    # Last 3 rows
+    if column_index < 3:
+      return 6
+    elif column_index < 6:
+      return 7
+    else:
+      return 8

@@ -49,7 +49,10 @@ def main():
     sudoku_table_visualizer.show(sudoku_table)
 
     logger.info("Filling the table's cells with one possible outcome...")
-    sudoku_table = sudoku_solver.fill_certain_cells(sudoku_table)
+    number_of_cells_filled = sudoku_solver.fill_certain_cells(sudoku_table)
+    while number_of_cells_filled > 0:
+        number_of_cells_filled = sudoku_solver.fill_certain_cells(sudoku_table)
+
     sudoku_table_visualizer.show(sudoku_table)
 
     # if not sudoku_table.is_done(): 
