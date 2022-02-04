@@ -60,7 +60,7 @@ class SudokuSolver():
                     # The number occurred once, so the only index set in the 
                     # number_to_column_dictionary is the column we need.
                     column_index = number_to_column_dictionary[number]
-                    logger.success(f'Cell x{column_index+1} y{row_index+1} must be {number}!')
+                    logger.success(f'Cell x{column_index+1} y{row_index+1} must be {number}! (solved using row-method)')
                     sudoku_table.fill(row_index, column_index, number)
                     number_of_cells_filled += 1
         #todo
@@ -86,7 +86,7 @@ class SudokuSolver():
 
                     if len(possible_numbers) == 1:
                         certain_number = possible_numbers[0]
-                        logger.success(f'Cell x{column_index+1} y{row_index+1} must be {certain_number}!')
+                        logger.success(f'Cell x{column_index+1} y{row_index+1} must be {certain_number}! (solved using cell-method)')
                         sudoku_table.fill(row_index, column_index, certain_number)
                         number_of_cells_filled += 1
                     else:
