@@ -1,3 +1,11 @@
+# Sudoku Solver
+
+A little hobby project to solve the Sudoku I got stuck on during vacation. 
+I know there are existing solutions out there, I just wanted to do it myself.
+
+![](https://raw.githubusercontent.com/edwinvanrooij/sudoku-solver/readme_screenshot_1.png)
+![](https://raw.githubusercontent.com/edwinvanrooij/sudoku-solver/readme_screenshot_2.png)
+
 ## Installation
 
 Execute in a terminal
@@ -14,11 +22,8 @@ Execute in a terminal
 python3 -m main --input_file=assets/input/hard_input.json
 ```
 
-----
+---
 
-# Sudoku Solver
+## Implementation
 
-A little hobby project to solve the Sudoku I got stuck on during vacation. 
-I know there are existing solutions out there, I just wanted to do it myself.
-
-![](https://raw.githubusercontent.com/cfpb/open-source-project-template/main/screenshot.png)
+#TODO; explain the way it works
