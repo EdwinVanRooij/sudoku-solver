@@ -59,6 +59,7 @@ def main():
 
     if sudoku_table.completed: 
         logger.success("Successfully completed the Sudoku!")
+        return
     else:
         logger.warning("Could not complete the Sudoku by filling out all certainties. Moving on to guessing...")
     
