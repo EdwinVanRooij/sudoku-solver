@@ -92,6 +92,9 @@ def main():
         if temp_sudoku_table.completed:
             logger.success("Successfully completed the Sudoku!")
             sudoku_table_visualizer.show(temp_sudoku_table)
+            #todo; write output
+            # logger.info(f"Writing output to '{args.output_file}'...")
+            # sudoku_table_writer.write(args.output_file)
             break
         else:
             logger.error(f'Guess {cell_id} = {number} did not work out, got stuck here:')
@@ -102,14 +105,3 @@ def main():
             "guessing every cell's possibilities one by one. A next step to this program could be to " + \
             "support multiple guesses within the same temp_sudoku_table.")
 
-
-    # if not sudoku_table.is_done(): 
-    #     logger.info("Sudoku table is not yet done, bruteforcing all possibilities...")
-    #     sudoku_table = sudoku_solver.bruteforce_remaining_tables(sudoku_table)
-
-    # logger.info("Solved!")
-    # sudoku_table_visualizer.show(sudoku_table)
-
-    # logger.success("Solved!")
-    # logger.info(f"Writing output to '{args.output_file}'...")
-    # sudoku_table_writer.write(args.output_file)
