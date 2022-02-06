@@ -3,8 +3,9 @@
 A little hobby project to solve the Sudoku I got stuck on during vacation. 
 I know there are existing solutions out there, I just wanted to do it myself.
 
-![](https://raw.githubusercontent.com/edwinvanrooij/sudoku-solver/readme_screenshot_1.png)
-![](https://raw.githubusercontent.com/edwinvanrooij/sudoku-solver/readme_screenshot_2.png)
+![](https://raw.githubusercontent.com/EdwinVanRooij/sudoku-solver/main/readme_screenshot_1.png)
+
+![](https://raw.githubusercontent.com/EdwinVanRooij/sudoku-solver/main/readme_screenshot_2.png)
 
 ## Installation
 
