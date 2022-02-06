@@ -10,7 +10,7 @@ Jarvis Vision.
 
 from loguru import logger
 from datetime import datetime
-from copy import copy
+from copy import deepcopy
 
 from main.constants.variables import DEFAULT_INPUT_FILENAME, DEFAULT_OUTPUT_FILENAME
 from main.utilities.sudoku_solver import SudokuSolver
@@ -66,11 +66,14 @@ def main():
     # Track the guesses in a dictionary of (cell_id, number) records
     guesses_dictionary = {}
     while True:
-        temp_sudoku_table = copy(sudoku_table)
+        temp_sudoku_table = deepcopy(sudoku_table)
         cell_id, number = sudoku_solver.guess_cell(temp_sudoku_table, guesses_dictionary)
 
-        if cell_id is None:
+        if cell_id is None and number is None:
+            logger.warning(f'No possible guesses left, tried {guesses_dictionary}')
             break
+
+        logger.info(f'Guessing {cell_id} = {number}')
 
         row_index, column_index = split_cell_id(cell_id)
         temp_sudoku_table.fill(row_index, column_index, number)
@@ -90,6 +93,9 @@ def main():
             logger.success("Successfully completed the Sudoku!")
             sudoku_table_visualizer.show(temp_sudoku_table)
             break
+        else:
+            logger.error(f'Guess {cell_id} = {number} did not work out, got stuck here:')
+            sudoku_table_visualizer.show(temp_sudoku_table)
 
     if not temp_sudoku_table.completed:
         logger.warning("Could not complete the Sudoku by filling out all certainties after " + \

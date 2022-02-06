@@ -29,11 +29,10 @@ class SudokuSolver():
                         # There is at least one possible guess left for this cell. Just pick the first one,
                         # there is no way of knowing which would be the better guess.
                         guessed_number = remaining_possible_numbers[0]
-                        logger.info(f'Guessing {current_cell_id}: {guessed_number}')
                         return current_cell_id, guessed_number
 
         logger.info(f'Could not find anything to guess anymore, returning None')
-        return None
+        return None, None
 
     def fill_certain_cells(self, sudoku_table: SudokuTable):
         number_of_cells_filled = 0
