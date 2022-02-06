@@ -10,10 +10,12 @@ Jarvis Vision.
 
 from loguru import logger
 from datetime import datetime
+from copy import copy
 
 from main.constants.variables import DEFAULT_INPUT_FILENAME, DEFAULT_OUTPUT_FILENAME
 from main.utilities.sudoku_solver import SudokuSolver
 from main.utilities.sudoku_table_visualizer import SudokuTableVisualizer
+from main.utilities.util import split_cell_id
 
 from .utilities.sudoku_table_reader import SudokuTableReader
 
@@ -58,7 +60,41 @@ def main():
     if sudoku_table.completed: 
         logger.success("Successfully completed the Sudoku!")
     else:
-        logger.warning("Could not complete the Sudoku.")
+        logger.warning("Could not complete the Sudoku by filling out all certainties. Moving on to guessing...")
+    
+    # Track the guesses in a dictionary of (cell_id, number) records
+    guesses_dictionary = {}
+    while True:
+        temp_sudoku_table = copy(sudoku_table)
+        cell_id, number = sudoku_solver.guess_cell(temp_sudoku_table, guesses_dictionary)
+
+        if cell_id is None:
+            break
+
+        row_index, column_index = split_cell_id(cell_id)
+        temp_sudoku_table.fill(row_index, column_index, number)
+
+        # Save the guess, preventing a duplicate guess in the future
+        if guesses_dictionary.get(cell_id) is None:
+            guesses_dictionary[cell_id] = [number]
+        else:
+            guesses_dictionary[cell_id].append(number)
+
+        logger.info("Filling the table's cells with one possible outcome...")
+        number_of_cells_filled = sudoku_solver.fill_certain_cells(temp_sudoku_table)
+        while number_of_cells_filled > 0:
+            number_of_cells_filled = sudoku_solver.fill_certain_cells(temp_sudoku_table)
+
+        if temp_sudoku_table.completed:
+            logger.success("Successfully completed the Sudoku!")
+            sudoku_table_visualizer.show(temp_sudoku_table)
+            break
+
+    if not temp_sudoku_table.completed:
+        logger.warning("Could not complete the Sudoku by filling out all certainties after " + \
+            "guessing every cell's possibilities one by one. A next step to this program could be to " + \
+            "support multiple guesses within the same temp_sudoku_table.")
+
 
     # if not sudoku_table.is_done(): 
     #     logger.info("Sudoku table is not yet done, bruteforcing all possibilities...")

@@ -32,6 +32,13 @@ def row_index_in_block_to_absolute(block_index, relative_row_index):
 
     result = start_row_index + relative_row_index
 
-    print(f'Block {block_index}, relative row index {relative_row_index}, absolute {result}')
+    # print(f'Block {block_index}, relative row index {relative_row_index}, absolute {result}')
 
     return result
+
+def generate_cell_id(row_index, column_index):
+    return f'{column_index}:{row_index}'
+
+def split_cell_id(cell_id):
+    """Returns row_index, column_index"""
+    return int(cell_id[2]), int(cell_id[0])
