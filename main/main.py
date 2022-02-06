@@ -15,6 +15,7 @@ from copy import deepcopy
 from main.constants.variables import DEFAULT_INPUT_FILENAME, DEFAULT_OUTPUT_FILENAME
 from main.utilities.sudoku_solver import SudokuSolver
 from main.utilities.sudoku_table_visualizer import SudokuTableVisualizer
+from main.utilities.sudoku_table_writer import SudokuTableWriter
 from main.utilities.util import split_cell_id
 
 from .utilities.sudoku_table_reader import SudokuTableReader
@@ -38,7 +39,7 @@ def main():
     sudoku_table_reader = SudokuTableReader()
     sudoku_table_visualizer = SudokuTableVisualizer()
     sudoku_solver = SudokuSolver()
-    # sudoku_table_writer = SudokuTableWriter()
+    sudoku_table_writer = SudokuTableWriter()
 
     absolute_filepath = os.path.abspath(args.input_file)
     input_exists = os.path.exists(absolute_filepath)
@@ -55,10 +56,10 @@ def main():
     while number_of_cells_filled > 0:
         number_of_cells_filled = sudoku_solver.fill_certain_cells(sudoku_table)
 
-    sudoku_table_visualizer.show(sudoku_table)
-
     if sudoku_table.completed: 
         logger.success("Successfully completed the Sudoku!")
+        sudoku_table_visualizer.show(sudoku_table)
+        sudoku_table_writer.write(args.output_file, sudoku_table)
         return
     else:
         logger.warning("Could not complete the Sudoku by filling out all certainties. Moving on to guessing...")
@@ -92,9 +93,7 @@ def main():
         if temp_sudoku_table.completed:
             logger.success("Successfully completed the Sudoku!")
             sudoku_table_visualizer.show(temp_sudoku_table)
-            #todo; write output
-            # logger.info(f"Writing output to '{args.output_file}'...")
-            # sudoku_table_writer.write(args.output_file)
+            sudoku_table_writer.write(args.output_file, temp_sudoku_table)
             break
         else:
             logger.error(f'Guess {cell_id} = {number} did not work out, got stuck here:')
